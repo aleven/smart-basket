@@ -8,7 +8,7 @@
       app
     >
       <v-list>
-        <v-list-tile 
+        <v-list-tile
           value="true"
           v-for="(item, i) in items"
           :key="i"
