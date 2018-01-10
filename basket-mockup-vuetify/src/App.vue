@@ -61,27 +61,44 @@
 
         <v-form v-model="valid">
       <v-text-field
-        label="Paziente"
+        label="Codice Paziente"
         v-model="pazoie"
         :rules="nameRules"
-        :counter="10"
         required
       ></v-text-field>
     </v-form>
 
-    <v-list>
+    <!-- <v-list>
       <v-list-tile
         value="true"
-        v-for="(item, i) in items"
-        :key="i"
+        v-for="num in 20"
+        :key="num"
       >
         <v-list-tile-action>
-          <v-icon v-html="item.icon"></v-icon>
+          <v-icon>mdi-account-card-details</v-icon>
         </v-list-tile-action>
         <v-list-tile-content>
-          <v-list-tile-title v-text="item.title"></v-list-tile-title>
+          <v-list-tile-title v-text="'Paziente' + num"></v-list-tile-title>
         </v-list-tile-content>
       </v-list-tile>
+    </v-list> -->
+
+    <v-list two-line>
+      <template v-for="num in 20">
+        <!-- <v-subheader v-if="item.header" v-text="num"></v-subheader> -->
+        <!-- <v-divider v-else-if="item.divider" v-bind:inset="item.inset"></v-divider> -->
+        <!-- <v-list-tile avatar v-else v-bind:key="num" @click=""> -->
+        <v-list-tile avatar v-bind:key="num" @click="">
+          <v-list-tile-avatar>
+            <!-- <img v-bind:src="item.avatar"> -->
+            <v-icon>mdi-account-card-details</v-icon>
+          </v-list-tile-avatar>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="'Paziente '+num"></v-list-tile-title>
+            <v-list-tile-sub-title v-text="'codice'+ num"></v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </template>
     </v-list>
 
       </v-container>
@@ -116,7 +133,7 @@
       return {
         clipped: false,
         drawer: false,
-        fixed: false,
+        fixed: true,
         items: [
           { icon: 'bubble_chart', title: 'DEMO CESTINO' },
           { icon: 'bubble_chart', title: 'DEMO PORTAL' },
