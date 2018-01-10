@@ -59,6 +59,31 @@
         </v-slide-y-transition>
         -->
 
+        <v-form v-model="valid">
+      <v-text-field
+        label="Paziente"
+        v-model="pazoie"
+        :rules="nameRules"
+        :counter="10"
+        required
+      ></v-text-field>
+    </v-form>
+
+    <v-list>
+      <v-list-tile
+        value="true"
+        v-for="(item, i) in items"
+        :key="i"
+      >
+        <v-list-tile-action>
+          <v-icon v-html="item.icon"></v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title v-text="item.title"></v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
+
       </v-container>
     </v-content>
 
@@ -79,7 +104,7 @@
     </v-navigation-drawer> -->
 
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
+      <span>&copy; aleven.it 2017</span>
     </v-footer>
   </v-app>
 
@@ -90,12 +115,11 @@
     data () {
       return {
         clipped: false,
-        drawer: true,
+        drawer: false,
         fixed: false,
         items: [
-          { icon: 'bubble_chart', title: 'Menu1' },
-          { icon: 'bubble_chart', title: 'Menu2' },
-          { icon: 'bubble_chart', title: 'Menu3' }
+          { icon: 'bubble_chart', title: 'DEMO CESTINO' },
+          { icon: 'bubble_chart', title: 'DEMO PORTAL' },
         ],
         miniVariant: false,
         // right: true,
