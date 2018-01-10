@@ -100,7 +100,7 @@
         miniVariant: false,
         // right: true,
         // rightDrawer: false,
-        title: 'BASKET MOCKUP'
+        title: 'SALA OPERATORIA 1'
       }
     }
   }
